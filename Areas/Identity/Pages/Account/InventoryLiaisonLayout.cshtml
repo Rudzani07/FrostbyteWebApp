@@ -1,0 +1,127 @@
+﻿@page
+@model FrostbyteWebApp.Areas.Identity.Pages.Account.InventoryLiaisonLayoutModel
+@{
+}
+<head>
+     <link rel="stylesheet" href="/css//LayoutBackground.css" asp-append-version="true" />
+</head>
+<body>
+
+
+    <p>
+
+     @*Here is the page for Inventory Liason Menu*@
+
+        @*Add New purchasing manager Card*@
+
+        <div class="card text-center">
+            <div class="card-header">
+                <h4><strong>INVENTORY LIAISON</strong></H4>
+            </div>
+            <div class="card-body">
+              
+                
+
+
+               <p>  
+ <div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Purchasing Manager</h5>
+         <p>
+            &ensp;
+             &ensp;
+              &ensp;
+             &ensp;
+
+
+        </p>
+        <p class="card-text">
+                
+                
+                  Create a new purchasing manager from your department.
+                
+                
+      
+        </p>
+           @*Link the 'create' to the purchasing manager model 'Create'*@
+           <a class="btn btn-success" asp-controller="PurchasingManagers" asp-action="Create">Add</a>
+   
+           @*Link the 'create' to the purchasing model 'Index*@
+            <a class="btn btn-primary" asp-controller="PurchasingManagers" asp-action="Index">View</a>
+        
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">purchasing Request</h5>
+        <p>
+            &ensp;
+             &ensp;
+              &ensp;
+             &ensp;
+
+
+        </p>
+        <p class="card-text" >
+           Create an inventory purchasing request from your department.
+        
+        </p>
+          <p class="card-text">
+ 
+                  To Send the purchasing request to the purchasing of your department.
+
+          </p>
+         @*Link the 'create' to the purchasing request model 'Create'*@
+           <a class="btn btn-success" asp-controller="PurchasingRequests" asp-action="Create">Add</a>
+       
+           @*Link the 'create' to the purchasing request model 'Index' *@
+            <a class="btn btn-primary" asp-controller="PurchasingRequests" asp-action="Index">View</a>
+     
+      </div>
+    </div>
+  </div>
+</div>
+     
+                            
+                    
+                    
+                    
+               </p>
+              
+            </div>
+            <div class="card-footer text-muted">
+                2 days ago
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        @*Add Purchasing Request Card*@
+
+
+
+
+
+
+
+       
+
+        @*Add view purchasing request for request created*@
+
+
+    </p>
+</body>

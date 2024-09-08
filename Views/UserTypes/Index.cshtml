@@ -1,0 +1,66 @@
+﻿@model IEnumerable<FrostbyteWebApp.Models.UserType>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sup)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Inv)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Client)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pum)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sup.Address1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Inv.Address1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Client.Address1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ad.Address1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pum.Address1)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.UserID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.UserID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.UserID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

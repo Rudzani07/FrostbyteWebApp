@@ -1,0 +1,120 @@
+﻿@model IEnumerable<FrostbyteWebApp.Models.SupplierRequestForQoutation>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DateIssued)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SupplierID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Specification)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.D)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemModel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemSerialNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Unit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EstimatedPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QoutedPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PaymentSpecifications)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeliverySpecification)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TermsCondition)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateIssued)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SupplierID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Specification)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.D.DepartmentID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemModel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemSerialNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Unit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstimatedPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QoutedPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaymentSpecifications)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeliverySpecification)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TermsCondition)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.SupplierRequestForQuotationID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.SupplierRequestForQuotationID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.SupplierRequestForQuotationID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,105 @@
+﻿@model FrostbyteWebApp.Models.SupplierRequestForQoutation
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>SupplierRequestForQoutation</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="SupplierRequestForQuotationID" />
+            <div class="form-group">
+                <label asp-for="DateIssued" class="control-label"></label>
+                <input asp-for="DateIssued" class="form-control" />
+                <span asp-validation-for="DateIssued" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SupplierID" class="control-label"></label>
+                <input asp-for="SupplierID" class="form-control" />
+                <span asp-validation-for="SupplierID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ItemCode" class="control-label"></label>
+                <input asp-for="ItemCode" class="form-control" />
+                <span asp-validation-for="ItemCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ItemName" class="control-label"></label>
+                <input asp-for="ItemName" class="form-control" />
+                <span asp-validation-for="ItemName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Specification" class="control-label"></label>
+                <input asp-for="Specification" class="form-control" />
+                <span asp-validation-for="Specification" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DepartmentID" class="control-label"></label>
+                <select asp-for="DepartmentID" class="form-control" asp-items="ViewBag.DepartmentID"></select>
+                <span asp-validation-for="DepartmentID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ItemModel" class="control-label"></label>
+                <input asp-for="ItemModel" class="form-control" />
+                <span asp-validation-for="ItemModel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ItemSerialNumber" class="control-label"></label>
+                <input asp-for="ItemSerialNumber" class="form-control" />
+                <span asp-validation-for="ItemSerialNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Unit" class="control-label"></label>
+                <input asp-for="Unit" class="form-control" />
+                <span asp-validation-for="Unit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quantity" class="control-label"></label>
+                <input asp-for="Quantity" class="form-control" />
+                <span asp-validation-for="Quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EstimatedPrice" class="control-label"></label>
+                <input asp-for="EstimatedPrice" class="form-control" />
+                <span asp-validation-for="EstimatedPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QoutedPrice" class="control-label"></label>
+                <input asp-for="QoutedPrice" class="form-control" />
+                <span asp-validation-for="QoutedPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PaymentSpecifications" class="control-label"></label>
+                <input asp-for="PaymentSpecifications" class="form-control" />
+                <span asp-validation-for="PaymentSpecifications" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeliverySpecification" class="control-label"></label>
+                <input asp-for="DeliverySpecification" class="form-control" />
+                <span asp-validation-for="DeliverySpecification" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TermsCondition" class="control-label"></label>
+                <input asp-for="TermsCondition" class="form-control" />
+                <span asp-validation-for="TermsCondition" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

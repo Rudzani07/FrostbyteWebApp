@@ -1,0 +1,37 @@
+﻿@model FrostbyteWebApp.Models.SendOrder
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>SendOrder</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.O)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.O.AccountHolder)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.S)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.S.Address1)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.SendOrderID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

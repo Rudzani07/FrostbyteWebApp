@@ -1,0 +1,18 @@
+﻿body {
+    background-image: url('/images/background.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: scroll;
+    background-size:cover;
+    
+
+}
+body.login {
+        
+        background-image: url('../images/backgroundlogin.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        background-size: cover;
+}
+

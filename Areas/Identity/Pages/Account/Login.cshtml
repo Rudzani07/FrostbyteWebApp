@@ -1,0 +1,104 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+}
+
+<body>
+
+    <p>
+
+
+
+
+        <div class="row">
+            <div style="text-align:center">
+                <div class="col-lg-6 mx-auto rounded border p-3 text-center bg-transparent">
+                    <p>
+                        <section>
+                            <div style="text-align:center">
+
+                                <h4 class="text-center">Sign In.</h4>
+
+                                <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+
+                                <form id="account" method="post">
+
+                                    <div class="form-floating mb-3">
+                                        <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
+                                        <label asp-for="Input.Email" class="form-label">Email</label>
+                                        <span asp-validation-for="Input.Email" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="password" />
+                                        <label asp-for="Input.Password" class="form-label">Password</label>
+                                        <span asp-validation-for="Input.Password" class="text-danger"></span>
+                                    </div>
+                                    <div class="checkbox mb-3">
+                                        <label asp-for="Input.RememberMe" class="form-label">
+                                            <input class="form-check-input" asp-for="Input.RememberMe" />
+                                            @Html.DisplayNameFor(m => m.Input.RememberMe)
+                                        </label>
+                                    </div>
+
+                                    <div class="row mb-3 align-content-center">
+                                        <div class=" col-sm-4 d-grid">
+                                            <button id="login-submit" type="submit" class="btn btn-outline-success">Log in</button>
+
+                                        </div>
+                                        <div class="col-sm-4 d-grid">
+                                            <a class="btn btn-outline-primary text-center" href="/" role="button">Cancel</a>
+
+                                        </div>
+                                    </div>
+                                    <div>
+                                    </div>
+                                    <div>
+
+                                        <a class="btn btn-link" id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
+
+
+
+                                    </div>
+                                </form>
+
+
+                            </div>
+
+                        </section>
+
+
+                    </p>
+
+                </div>
+              
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </p>
+
+     
+
+   
+</body>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+

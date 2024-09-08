@@ -1,0 +1,120 @@
+﻿ @page
+ @model FrostbyteWebApp.Models.PurchasingManager
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    }
+
+<body>
+
+    <p>
+
+        <div class="card">
+            <h5 class="card-header">Purchasing Manager</h5>
+            <div class="card-body">
+               
+                <p class="card-text">
+
+
+                    <hr />
+                    <div class="row">
+                        <div class="col-md-4">
+                            <form asp-action="Create">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <label asp-for="FirstName" class="control-label"></label>
+                                    <input asp-for="FirstName" class="form-control" />
+                                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="LastName" class="control-label"></label>
+                                    <input asp-for="LastName" class="form-control" />
+                                    <span asp-validation-for="LastName" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Username" class="control-label"></label>
+                                    <input asp-for="Username" class="form-control" />
+                                    <span asp-validation-for="Username" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Department" class="control-label"></label>
+                                    <input asp-for="Department" class="form-control" />
+                                    <span asp-validation-for="Department" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Phone" class="control-label"></label>
+                                    <input asp-for="Phone" class="form-control" />
+                                    <span asp-validation-for="Phone" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Address1" class="control-label"></label>
+                                    <input asp-for="Address1" class="form-control" />
+                                    <span asp-validation-for="Address1" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Address2" class="control-label"></label>
+                                    <input asp-for="Address2" class="form-control" />
+                                    <span asp-validation-for="Address2" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="City" class="control-label"></label>
+                                    <input asp-for="City" class="form-control" />
+                                    <span asp-validation-for="City" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Province" class="control-label"></label>
+                                    <input asp-for="Province" class="form-control" />
+                                    <span asp-validation-for="Province" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="ZipCode" class="control-label"></label>
+                                    <input asp-for="ZipCode" class="form-control" />
+                                    <span asp-validation-for="ZipCode" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <p>
+                                        &ensp;
+                                    </p>
+                                    <input type="submit" value="Create" class="btn btn-primary" />
+                                    <a asp-action="Index">Back</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+ 
+
+
+
+
+
+
+
+                </p>
+                
+            </div>
+        </div>
+
+ 
+         
+
+
+
+
+
+
+
+    </p>
+
+
+
+
+
+</body>
+ 
+ 
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

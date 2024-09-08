@@ -1,0 +1,70 @@
+﻿@model FrostbyteWebApp.Models.Order
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Order</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="OrderID" />
+            <div class="form-group">
+                <label asp-for="CreatedDate" class="control-label"></label>
+                <input asp-for="CreatedDate" class="form-control" />
+                <span asp-validation-for="CreatedDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SendSupplierRequestForQoutationID" class="control-label"></label>
+                <input asp-for="SendSupplierRequestForQoutationID" class="form-control" />
+                <span asp-validation-for="SendSupplierRequestForQoutationID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PaymentMethod" class="control-label"></label>
+                <input asp-for="PaymentMethod" class="form-control" />
+                <span asp-validation-for="PaymentMethod" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AccountHolder" class="control-label"></label>
+                <input asp-for="AccountHolder" class="form-control" />
+                <span asp-validation-for="AccountHolder" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BankNameID" class="control-label"></label>
+                <input asp-for="BankNameID" class="form-control" />
+                <span asp-validation-for="BankNameID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="YourReference" class="control-label"></label>
+                <input asp-for="YourReference" class="form-control" />
+                <span asp-validation-for="YourReference" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TheirReference" class="control-label"></label>
+                <input asp-for="TheirReference" class="form-control" />
+                <span asp-validation-for="TheirReference" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Amount" class="control-label"></label>
+                <input asp-for="Amount" class="form-control" />
+                <span asp-validation-for="Amount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

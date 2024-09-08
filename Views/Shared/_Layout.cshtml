@@ -1,0 +1,174 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@using FrostbyteWebApp.Models;
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - FrostByte</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/main.styles.css" asp-append-version="true" />
+    @*Add logo Link*@
+    <link rel="stylesheet" href="/css//background.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-transparent   mb-3">
+
+
+
+            <div class="container-fluid">
+                <style>
+                    img {
+                        border-radius: 50%;
+                    }
+                </style>
+
+                <a class="navbar-brand" asp-area="" asp-page="">    <img src="/css/logo.jpeg" alt="logo" style="width:80px;" />                                                             </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <style>
+                        ul {
+                            font-family: "Times New Roman", Times, serif;
+                            font-weight: bold;
+                        }
+                      
+                    </style>
+
+                    @*if the user is registered*@
+                    @{
+
+                        if (SignInManager.IsSignedIn(User))
+                        {
+                            <ul class="navbar-nav justify-content-center flex-grow-1">
+
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" asp-area="" asp-page="">Home</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" asp-area="" asp-page="">Customer </a>
+                                </li>
+
+                                @*Add dropdown for which servies are provided*@
+                                <li class="nav-item ">
+                                    <a class="nav-link text-white" asp-area="" asp-page="">Fault </a>
+                                </li>
+
+                                <li class="nav-item ">
+                                    <a class="nav-link text-white" asp-area="" asp-page="">Maintainance</a>
+
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" asp-area="" asp-page="">Inventory</a>
+                                </li>
+
+                            </ul>
+                            <ul class="navbar-nav d-flex justify-content-end">
+
+                              
+
+                                <li class="nav-item align-content-end">
+                                    <a class="nav-link text-white" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Welcome @User.Identity?.Name!</a>
+                                </li>
+                                <li class="nav-item">
+                                    <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                                        <button type="submit" class="nav-link btn btn-link text-white">Sign Out</button>
+                                    </form>
+                                </li>
+                                
+                                 
+
+                            </ul>
+
+
+                        }
+                        @*Else if the user is not registered*@
+                        else
+                        {
+
+                            <ul class="navbar-nav d-flex justify-content-center flex-grow-1">
+
+                                <li class="nav-item text-center">
+                                    <a class="nav-link text-white text-center" asp-area="Identity" asp-page="/Account/Register" style="">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" asp-area="Identity" asp-page="/Account/Register">Products</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" asp-area="Identity" asp-page="/Account/Register">Services</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" asp-area="Identity" asp-page="/Account/Register">About Us</a>
+                                </li>
+                                <li class="nav-item justify-content-end">
+                                <a class="nav-link text-white" asp-area="Identity" asp-page="/Account/Register">Register</a>
+                                </li>
+                                <li class="nav-item text-white">
+                                <a class="nav-link text-white justify-content-end" asp-area="Identity" asp-page="/Account/Login">Sign In</a>
+                                </li>
+
+                            </ul>
+ 
+
+
+
+
+
+                        }
+                    }
+
+
+
+
+                </div>
+
+
+
+            </div>
+        </nav>
+    </header>
+
+     
+    <style>
+        body {
+            background-image: url("/css/backgroundImage.jpg ");
+            height: 100vh;
+            background-size: cover;
+            opacity: 0.6;
+        }
+
+    </style>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - main - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+
+
+

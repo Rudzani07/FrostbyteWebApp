@@ -1,0 +1,45 @@
+﻿@model FrostbyteWebApp.Models.PmRequestForQoutation
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>PmRequestForQoutation</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="PmRequestForQoutationID" />
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PurchasingRequestID" class="control-label"></label>
+                <select asp-for="PurchasingRequestID" class="form-control" asp-items="ViewBag.PurchasingRequestID"></select>
+                <span asp-validation-for="PurchasingRequestID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PurcasingManagerID" class="control-label"></label>
+                <input asp-for="PurcasingManagerID" class="form-control" />
+                <span asp-validation-for="PurcasingManagerID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

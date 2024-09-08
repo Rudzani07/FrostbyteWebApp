@@ -1,0 +1,54 @@
+﻿@model IEnumerable<FrostbyteWebApp.Models.SendSupplierRequestForQuotation>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DateCreated)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValidUntil)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SRFQ)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PM)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateCreated)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValidUntil)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SRFQ.ItemCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PM.Address1)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.SendSupplierPmRequestForQoutationID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.SendSupplierPmRequestForQoutationID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.SendSupplierPmRequestForQoutationID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
